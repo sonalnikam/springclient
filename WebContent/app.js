@@ -1,3 +1,5 @@
+
+
 angular.module('appRoutes', ['ui.router','ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
 .config(function($stateProvider, $urlRouterProvider,$locationProvider) {
   $urlRouterProvider.otherwise("/login");
@@ -63,7 +65,7 @@ App.controller('login', ['$scope', '$http', '$state','$rootScope','$interval','$
   
   $http({
   method:'POST',
-  url:'http://localhost:8080/EmployeePortal//login',
+  url:'http://springdemo-sonal1.44fs.preview.openshiftapps.com//login',
   data:login,
   header:{'Content-Type':'application/json'}
   }).success(function (data, status, headers, config) {
@@ -128,7 +130,7 @@ var signup={
   
   $http({
   method:'POST',
-  url:'http://localhost:8080/EmployeePortal//registerEmployee',
+  url:'http://springdemo-sonal1.44fs.preview.openshiftapps.com//registerEmployee',
   data:signup,
   header:{'Content-Type':'application/json'}
   }).success(function (data, status, headers, config) {
@@ -185,7 +187,7 @@ App.controller('showemployee', ['$scope', '$http', '$state','$rootScope','$inter
   self.determinateValue = 1;
   $http({
   method:'GET',
-  url:'http://localhost:8080/EmployeePortal//employees',
+  url:'http://springdemo-sonal1.44fs.preview.openshiftapps.com//employees',
   
   }).success(function (data, status, headers, config) {
       //alert('success!!! Employee Fetched !!!');
@@ -199,7 +201,7 @@ $scope.remove=function(id,index){
 confirm('Do yo Want to DELETE Employee: employee id'+id);
 $http({
   method:'DELETE',
-  url:'http://localhost:8080/EmployeePortal//delete/'+id
+  url:'http://springdemo-sonal1.44fs.preview.openshiftapps.com//delete/'+id
   
   }).success(function (data, status, headers, config) {
         //alert('success!!! Employee Fetched !!!');
@@ -240,7 +242,7 @@ App.controller('EmployeeUpdate', ['$scope', '$http', '$state','$rootScope', func
 var uid=$rootScope.updateId;
 $http({
   method:'GET',
-  url:'http://localhost:8080/EmployeePortal//getEmployeeInfo/'+uid
+  url:'http://springdemo-sonal1.44fs.preview.openshiftapps.com//getEmployeeInfo/'+uid
   
   }).success(function (data, status, headers, config) {
         alert('success!!! Employee Information Fetched !!!');
@@ -268,7 +270,7 @@ var employeeupdatedata={
 
   $http({
   method:'POST',
-  url:'http://localhost:8080/EmployeePortal//updateEmployee',
+  url:'http://springdemo-sonal1.44fs.preview.openshiftapps.com//updateEmployee',
   data:employeeupdatedata,
   header:{'Content-Type':'application/json'}
   }).success(function (data, status, headers, config) {
